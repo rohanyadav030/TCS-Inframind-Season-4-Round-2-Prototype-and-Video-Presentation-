@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> Employee</title>
+	<link rel="stylesheet" href="profile.css">
+  <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+  <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.2.0/p5.min.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+
+  <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script> 
+	<script type="text/javascript">
+		function sendEmail() {
+			Email.send({
+        name :"iHealth mate",
+				Host: "smtp.gmail.com",
+				Username : "ihealthmate@gmail.com",
+				Password : "Iheathmate@123",
+				To :"draksh387@gmail.com",
+				From : "ihealthmate@gmail.com",
+				Subject : "Health Abnormality",
+				Body : "Caution!! your temperature is been abnormaly recorded."
+			})
+			.then(function(message){
+				alert("mail sent successfully")
+			});
+		}
+
+    </script>
+  
+</head>
+<body>
+ 
+<div class="wrapper">
+    <div class="left">
+        <img src="user.png" 
+        alt="user" width="200" height="200">
+        <h4>Rakesh Dhawan</h4>
+         <p>Extractive metallurgical officer</p>
+    </div>
+    <div class="right">
+        <div class="info">
+            <h3>Information</h3>
+            <div class="info_data">
+                 <div class="data">
+                    <h4>Email</h4>
+                    <p>draksh387@gmail.com</p>
+                 </div>
+                 <div class="data">
+                   <h4>Phone</h4>
+                    <p>954-507-7848</p>
+              </div>
+            </div>
+        </div>
+      
+      <div class="projects">
+            <h3>Rental and status</h3>
+            <div class="projects_data">
+                 <div class="data">
+                    <h4>Address</h4>
+                    <p>1678 Cincinnati Nagar IN 45202  </p>
+                 </div>
+                 <div class="data">
+                   <h4>Birthdate</h4>
+                    <p>21-Dec-2000</p>
+              </div>
+              <div class="data">
+                <h4>Joined Date</h4>
+                 <p>29-Nov-2020</p>
+           </div>
+            </div>
+            <div class="data">
+              <br>
+              <h4 style="color:rgb(50, 54, 87);">Status</h4>
+              <br>
+              <p style="color:rgb(50, 54, 87);">On leave</p>
+         </div>
+        </div>
+      
+        <div class="social_media">
+            <ul>
+              <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+      </div>
+      <br>
+      <h3>View parameters by clicking them each :</h3>
+      <br>
+      
+    
+      <a href="Temperature1.html"><p style="color:rgb(50, 54, 87);"> 1.Body Temperature</p></a>
+      <br>
+      <p id="temp"></p>
+      
+      <script>
+     
+       </script>
+
+      <br>
+      <a href="pressure1.html"><p style="color:rgb(50, 54, 87);">2.Blood Pressure</p></a>
+      <p id="press"></p>
+      
+      <script>
+
+
+let data;
+        
+        function preload(){
+            data = loadTable("Td_1.csv","csv","header");
+        
+        }
+        function setup(){
+            createCanvas(400,400);
+            //print(data);
+            let numRows=data.getRowCount();
+            //print(numRows);
+            let lng = data.getColumn("Time");
+            let lat = data.getColumn("Temperature");
+            let c=0;
+            var m=max(lat);
+            var mn=min(lat);
+            var avg=parseInt((m+mn)/2);
+           // console.log(max(lat));
+           // console.log(min(lat));
+           // console.log(avg);
+           //document.getElementById("temp").innerHTML = "<span style='color: red;'> Hello, your todays temperature is +avg </span>";
+          
+           if(avg>37)
+           {
+             document.getElementById("temp").innerHTML = "<span style='color: red;'> Caution!! your temperature is recorded  </span>" +avg+"*c <span style='color: red;'>you may have a chance of fever.</span>";
+            // document.writeln("cation!! your temperature is increased ");
+
+            
+   
+            sendEmail();
+
+
+
+           }
+           
+           else if(avg>40)
+           {
+             document.getElementById("temp").innerHTML = "<span style='color: red;'> Caution!! your temperature is recorded  </span>" +avg+"*c It's a Medical Emergiency";
+            // document.writeln("cation!! your temperature is increased ");
+           }
+    
+    
+           else if(avg<36)
+           {
+            document.getElementById("temp").innerHTML = "<span style='color: green;'> Caution!! your temperature is recorded : </span> "+avg;
+            // document.writeln("cation!! your temperature is increased ");
+           }
+           
+           else if(avg<35)
+           {
+            document.getElementById("temp").innerHTML = "<span style='color: green;'> Caution!! your temperature is recorded : </span> "+avg+"*c you may have a chance of Hypothermia";
+            // document.writeln("cation!! your temperature is increased ");
+           }
+           
+           else if(avg<32)
+           {
+            document.getElementById("temp").innerHTML = "<span style='color: green;'> Caution!! your temperature is recorded : </span> "+avg+"*c you need medical Emergiency";
+            // document.writeln("cation!! your temperature is increased ");
+           }
+    
+
+           else
+           {
+            document.getElementById("temp").innerHTML = "<span style='color: green;'> Hello, your today's temperature recorded is : </span> "+avg;
+            //document.getElementById("temp").innerHTML="Have a nice day a head";
+           }
+        
+        }
+        </script>
+
+      <br>
+      <a href="oxy1.html"><p style="color:rgb(50, 54, 87);">3.Oxygen Saturation Rate</p></a>
+      <p id="oxy"></p>
+
+
+      
+
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

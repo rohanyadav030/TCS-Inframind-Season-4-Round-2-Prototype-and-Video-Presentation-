@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+/* for search bar style*/
+
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+
+/* for table style*/
+
+        * {
+  font-family: sans-serif; /* Change your font family */
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+    </style>
+    
+</head>
+<body>
+    
+    <h2 style ="text-align: center; text-transform: uppercase; color :rgb(26, 92, 97) ;">My Employees</h2>
+   
+    <center>
+        
+    <input type="text" name="search" id="myinput" placeholder="type employee's name..." onkeyup="searchFun()">
+
+
+        <h3>
+    <table class="content-table" id="mytable" border="1" cellspacing=0 cellpadding=15>
+        
+        <tr class="content-table">
+            <thread>
+            <th style="width:30%;">Name</th>
+            <th style="width:30%;">Address</th>
+            <th style="width:30%;">Emp ID</th>
+            <th style="width:30%;">Gender</th>
+            <th style="width:30%;">Designation</th>
+            <th style="width:30%;">Age</th>
+        </tr>
+    </thread>
+    <tbody>
+        <tr onclick="window.location='profile.html';">
+            <td>Rohan Yadav</td>
+            <td>656 Edsel Road Sherman Oaks CA 91403</td>
+            <td>M1725</td>
+            <td>Male</td>
+            <td>Manager </td>
+            <td>20</td>
+            
+        </tr>
+        
+        <tr class="active-row" onclick="window.location='#';">
+            <td>Jack P.Jalil</td>
+            <td>63 Woodridge Lane Memphis TN 38138</td>
+            <td>K6456</td>
+            <td>Male</td>
+            <td>Programmer</td>
+            <td>20</td>
+            
+        </tr>
+     
+        <tr onclick="window.location='#';">
+            <td>Ankit Rao</td>
+            <td>1241 Canis Heights Drive Los Angeles CA 90017</td>
+            <td>P8723</td>
+            <td>Male</td>
+            <td>Web Developer</td>
+            <td>20</td>
+            
+        </tr>
+        <tr class="active-row" onclick="window.location='#';">
+            <td>Ashwin Dalal</td>
+            <td>403 Snyder Avenue Charlotte NC 28208</td>
+            <td>D7894</td>
+            <td>Male</td>
+            <td>Web Developer</td>
+            <td>21</td>
+       </tr>
+       <tr onclick="window.location='#';">
+            <td>Rohit Yadav</td>
+            <td>1636 Walnut Hill Drive Cincinnati OH 45202</td>
+            <td>D9456</td>
+            <td>Male</td>
+            <td>Technical Assistance</td>
+            <td>21</td>
+       </tr>
+       <tr class="active-row" onclick="window.location='#';">
+            <td>Ellan D. Downie</td>
+            <td>3588 Karen Lane Louisville KY 40223</td>
+            <td>F9874</td>
+            <td>Female</td>
+            <td>Programmer</td>
+            <td>21</td>
+       </tr>
+       <tr onclick="window.location='#';">
+            <td>Clara Berry</td>
+            <td>1636 Walnut Hill Drive Cincinnati OH 45202</td>
+            <td>S4521</td>
+            <td>Female</td>
+            <td>Service technician</td>
+            <td>21</td>
+       </tr>
+       <tr class="active-row" onclick="window.location='#';">
+            <td>Dara Singh</td>
+            <td>1451 Manhaten Drive OH 45245</td>
+            <td>S4523</td>
+            <td>Male</td>
+            <td>Service technician</td>
+            <td>21</td>
+       </tr>
+       <tr onclick="window.location='#';">
+           <td>Susan Juarez </td>
+           <td>3588 Karen Lane Louisville KY 40223  </td>
+           <td>ST5421</td>
+           <td>Female</td>
+           <td>Service technician</td>
+           <td>21</td>
+        </tr>
+       <tr class="active-row" onclick="window.location='#';">
+          <td>Joseph L. Judge</td>
+          <td>2170 Ocala Street Orlando FL 32801</td>
+          <td>S4891</td>
+          <td>Male</td>
+          <td>Electronic typesetting machine operator</td>
+          <td>23</td>
+         </tr>
+       <tr onclick="window.location='#';">
+         <td>Mark Boucher</td>
+          <td>256 Olive Street NY</td>
+          <td>T47871</td>
+          <td>Male</td>
+          <td>Techbical Assistance </td>
+          <td>23</td>
+      </tr>
+      <tr class="active-row" onclick="window.location='#';">
+          <td>John Smith </td>
+          <td>384 Flynn Street Strongsville OH 44136 </td>
+          <td>S4545</td>
+          <td>Male</td>
+          <td>Facilitator </td>
+         <td>23</td>
+       </tr>
+       <tr onclick="window.location='#';">
+        <td>Eric C. Lavelle </td>
+         <td>1120 Whitetail Lane Dallas TX 75207</td>
+         <td>RC4545</td>
+         <td>Male</td>
+         <td>Rigging chaser</td>
+         <td>24</td>
+     </tr>
+     <tr class="active-row" onclick="window.location='#';">
+         <td>Stephanie P. Lederman</td>
+         <td>2117 Larry Street Waukesha WI 53186  </td>
+         <td>S4521</td>
+         <td>Female</td>
+         <td>Mental health aide</td>
+         <td>25</td>
+   </tr>
+     <tr onclick="window.location='#';">
+          <td>Tonia Diaz</td>
+          <td>4724 Rocky Road Philadelphia PA 19107</td>
+          <td>F5645</td>
+          <td>Female</td>
+          <td>Facilitator</td>
+          <td>25</td>
+      </tr>
+     <tr class="active-row" onclick="window.location='#';">
+          <td>Cheryl T. Smithers</td>
+          <td>1203 Abia Martin Drive Commack NY 11725</td>
+          <td>S4511</td>
+          <td>Female</td>
+          <td>Personal banker</td>
+          <td>26</td>
+      </tr>
+      <tr onclick="window.location='#';">
+          <td>Claras C. Berry</td>
+          <td>1636 Walnut Hill Drive Cincinnati OH 45202</td>
+         <td>S4451</td>
+         <td>Male</td>
+         <td>Service technician</td>
+         <td>29</td>
+    </tr>
+    <tr class="active-row" onclick="window.location='profile1.html';">
+      <td>Rakesh Dhawan</td>
+      <td>1678 Cincinnati Nagar IN 45202</td>
+      <td>E4441</td>
+      <td>Male</td>
+      <td>Extractive metallurgical engin</td>
+      <td>30</td>
+  </tr>
+  <tr onclick="window.location='#';">
+    <td>Abhishake Tiwari</td>
+    <td>1636 Walnuti Wadi IN 44502</td>
+     <td>ST4521</td>
+     <td>Male</td>
+     <td>Service technician</td>
+     <td>30</td>
+</tr>
+<tr class="active-row" onclick="window.location='#';">
+     <td>Anita Sharma</td>
+     <td>1336 Marin Drive IN 45202</td>
+     <td>S4521</td>
+     <td>Female</td>
+     <td>Control and valve installer</td>
+     <td>30</td>
+</tr>
+<tr onclick="window.location='#';">
+     <td>Sunita Verma</td>
+     <td>1636 Central Metro IN 32202</td>
+     <td>ET9821</td>
+     <td>Female</td>
+     <td>Electronic typesetting machine operator</td>
+     <td>32</td>
+</tr>
+<tr class="active-row" onclick="window.location='#';">
+      <td>Narendra Tomar</td>
+     <td>1645 Angan Colony IN 1302</td>
+     <td>ST4798</td>
+     <td>Male</td>
+     <td>Service technician</td>
+     <td>35</td>
+</tr>
+<tr onclick="window.location='#';">
+     <td>Sumit Sheety</td>
+     <td>1636 Bhagaya Nagar IN 4542</td>
+     <td>T4981</td>
+     <td>Male</td>
+     <td>Teaching assistant</td>
+     <td>35</td>
+</tr>
+<tr class="active-row" onclick="window.location='#';">
+  <td>Rajnath Singh</td>
+  <td>1987 Raj Bhavan IN 4982</td>
+  <td>T4521</td>
+  <td>Male</td>
+  <td>Trainer</td>
+  <td>36</td>
+</tr>
+<tr onclick="window.location='#';">
+  <td>Priyanky Chopra</td>
+  <td>1554 Basmat IN 4565</td>
+  <td>S4521</td>
+  <td>Female</td>
+  <td>Trainer</td>
+  <td>38</td>
+</tr>
+<tr class="active-row" onclick="window.location='#';">
+  <td>Robet Downy</td>
+  <td>1636 Cincinnati Naile ML 4545</td>
+  <td>P4000</td>
+  <td>Male</td>
+  <td>Prgrammer</td>
+  <td>39</td>
+</tr>
+<tr onclick="window.location='#';">
+  <td>Mr.Bose</td>
+  <td>1112 Lake pisaata TN 4111</td>
+  <td>S4521</td>
+  <td>Male</td>
+  <td>WEB Devloper</td>
+  <td>40</td>
+</tr>
+<tr class="active-row" onclick="window.location='#';">
+  <td>Borisi johnson</td>
+  <td>1636 Walnut Hill Drive Cincinnati OH 45202</td>
+  <td>S4521</td>
+  <td>Female</td>
+  <td>Controller</td>
+  <td>42</td>
+</tr>
+<tr onclick="window.location='#';">
+  <td>Tara Singh</td>
+  <td>1464 Mahadivap jakliera IN 45645</td>
+  <td>C4521</td>
+  <td>Male</td>
+  <td>Contoller</td>
+  <td>45</td>
+</tr>
+
+    </center>
+</tbody>
+    </table>
+</h3>
+
+    <script>
+        const searchFun = () =>{
+            let filter = document.getElementById("myinput").value.toUpperCase();
+            let mytable = document.getElementById("mytable");
+            let tr = mytable.getElementsByTagName("tr");
+        
+
+            for (var i=0; i<tr.length ; i++)
+            {
+                let td = tr[i].getElementsByTagName('td')[0];
+
+                if(td){
+                    let textvalue = td.textContent || td.innerHTML;
+
+                    if(textvalue.toUpperCase().indexOf(filter) > -1)
+                    {
+                        tr[i].style.display = "";
+                    }
+                    else{
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
